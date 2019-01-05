@@ -27,6 +27,11 @@ function player(){
   }
 }
 
+function enemy(x, y){
+  this.x=x;
+  this.y=y;
+}
+
 var c,ctx,p;
 setTimeout(setup,500);
 function setup(){
