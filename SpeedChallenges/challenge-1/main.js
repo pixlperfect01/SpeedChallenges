@@ -22,6 +22,7 @@ function player(){
     }
   }
   this.draw=function(){
+    ctx.fillStyle="#FF0000";
     ctx.fillRect(this.x,this.y,50,50);
   }
 }
@@ -31,7 +32,7 @@ setTimeout(setup,500);
 function setup(){
   c=document.getElementById("c");
   ctx=c.getContext("2d");
-  p=new Player();
+  p=new player();
   draw();
 }
 
