@@ -7,12 +7,12 @@ function player(){
     }
   }
   this.down=function(){
-    if(this.y<c.height){
+    if(this.y<c.height-50){
       this.y++;
     }
   }
   this.right=function(){
-    if(this.x<c.width){
+    if(this.x<c.width-50){
       this.x++;
     }
   }
@@ -20,6 +20,9 @@ function player(){
     if(this.x>0){
       this.x--;
     }
+  }
+  this.draw=function(){
+    ctx.fillRect(this.x,this.y,50,50);
   }
 }
 
