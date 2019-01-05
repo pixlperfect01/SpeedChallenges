@@ -32,12 +32,16 @@ function enemy(x, y){
   this.y=y;
 }
 
-var c,ctx,p;
+var c,ctx,p,e=[];
 setTimeout(setup,500);
 function setup(){
   c=document.getElementById("c");
   ctx=c.getContext("2d");
   p=new player();
+  e.length=10;
+  for(var i=0;i<e.length;i++){
+    e[i]=new enemy(Math.trunc(Math.random()*(c.width-150))+100,Math.random()*(c.height-150))+100);
+  }
   draw();
 }
 
@@ -50,6 +54,10 @@ function draw(){
     p.up();
   if(keys.right)
     p.up();
+  for(var i=0;i<e.length;i++){
+    e.move((1/3));
+    e.draw();
+  }
   p.draw();
 }
 
