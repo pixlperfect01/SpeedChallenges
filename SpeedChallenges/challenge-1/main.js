@@ -26,11 +26,12 @@ function player(){
   }
 }
 
-var c,ctx;
+var c,ctx,p;
 setTimeout(setup,500);
 function setup(){
   c=document.getElementById("c");
   ctx=c.getContext("2d");
+  p=new Player();
   draw();
 }
 
