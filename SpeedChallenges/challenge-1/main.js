@@ -70,8 +70,8 @@ function draw(){
   if(keys.right)
     p.up();
   for(var i=0;i<e.length;i++){
-    e.move((1/3));
-    e.draw();
+    e[i].move((1/3));
+    e[i].draw();
   }
   p.draw();
 }
