@@ -42,7 +42,7 @@ function enemy(x, y){
     if(this.y>c.height-20)
       this.y=c.height-20;
   }
-  this.draw(){
+  this.draw=function(){
     ctx.fillRect(this.x,this.y,20,20);
   }
 }
