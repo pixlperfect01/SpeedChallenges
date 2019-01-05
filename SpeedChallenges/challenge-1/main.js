@@ -30,6 +30,21 @@ function player(){
 function enemy(x, y){
   this.x=x;
   this.y=y;
+  this.move=function(m){
+    this.x+=Math.trunc(Math.random()*(m*2))-m;
+    this.y+=Math.trunc(Math.random()*(m*2))-m;
+    if(this.x<0)
+      this.x=0;
+    if(this.x>c.width-20)
+      this.x=c.width-20;
+    if(this.y<0)
+      this.y=0;
+    if(this.y>c.height-20)
+      this.y=c.height-20;
+  }
+  this.draw(){
+    ctx.fillRect(this.x,this.y,20,20);
+  }
 }
 
 var c,ctx,p,e=[];
