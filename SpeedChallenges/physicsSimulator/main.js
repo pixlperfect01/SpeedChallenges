@@ -12,7 +12,9 @@ function Object(x, y){
     this.acc.mult(0);
   }
   this.show=function(){
+    ctx.beginPath();
     ctx.arc(this.pos.x, this.pos.y, this.r, 0, 2*Math.PI);
+    ctx.fill();
   }
 }
 function createVector(x_, y_){
