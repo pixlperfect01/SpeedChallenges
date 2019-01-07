@@ -2,7 +2,7 @@ function Object(x, y){
   this.pos=createVector(x, y);
   this.vel=createVector(0, 0);
   this.acc=createVector(0, 0);
-  this.r=10;
+  this.r=25;
   this.applyForce=function(f){
     this.acc.add(f);
   }
@@ -13,8 +13,9 @@ function Object(x, y){
   }
   this.show=function(){
     ctx.beginPath();
-    ctx.arc(this.pos.x, this.pos.y, this.r, 0, 2*Math.PI);
-    ctx.fill();
+    ctx.strokeStyle="#FF0000";
+    ctx.arc(this.pos.x, this.pos.y, this.r, 0, 2 * Math.PI);
+    ctx.stroke();
   }
 }
 function Water(x, y, w, h){
