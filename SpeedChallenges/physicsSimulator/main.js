@@ -73,7 +73,7 @@ function background(a, b, c, d){
   }else if(a&&b&&c&&d){
     ctx.fillStyle="rgba("+a+","+b+","+c+","+d+")";
   }
-  ctx.fillRect(0,0,c.width, c.height);
+  ctx.fillRect(0, 0, 5000, 5000);
 }
 function draw(){
   background(255);
