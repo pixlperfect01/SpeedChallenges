@@ -50,6 +50,18 @@ function Vector(x, y){
     this.y/=a;
   }
 }
+function background(a, b, c, d){
+  if(a&&!b&&!c&&!d){
+    ctx.fillStyle="rgb("+a+","+a+","+a+")";
+  }else if(a&&b&&!c&&!d){
+    ctx.fillStyle="rgba("+a+","+a+","+a+","+b+")";
+  }else if(a&&b&&c&&!b){
+    ctx.fillStyle="rgb("+a+","+b+","+c+")";
+  }else if(a&&b&&c&&d){
+    ctx.fillStyle="rgba("+a+","+b+","+c+","+d+")";
+  }
+  ctx.fillRect(0, 0, 5000, 5000);
+}
 setTimeout(setup,500);
 var c,ctx,obj,grav;
 function setup(){
@@ -62,18 +74,6 @@ function setup(){
   obj=new Object(c.width/2, 0);
   grav=createVector(0,0.1);
   draw();
-}
-function background(a, b, c, d){
-  if(a&&!b&&!c&&!d){
-    ctx.fillStyle="rgb("+a+","+a+","+a+")";
-  }else if(a&&b&&!c&&!d){
-    ctx.fillStyle="rgba("+a+","+a+","+a+","+b+")";
-  }else if(a&&b&&c&&!b){
-    ctx.fillStyle="rgb("+a+","+b+","+c+")";
-  }else if(a&&b&&c&&d){
-    ctx.fillStyle="rgba("+a+","+b+","+c+","+d+")";
-  }
-  ctx.fillRect(0, 0, 5000, 5000);
 }
 function draw(){
   background(255);
