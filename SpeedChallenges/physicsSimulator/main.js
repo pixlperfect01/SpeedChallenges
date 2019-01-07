@@ -60,7 +60,7 @@ function setup(){
   c.style.height=window.innerHeight;
   ctx=c.getContext("2d");
   obj=new Object(c.width/2, 0);
-  grav=createVector(0,0.2);
+  grav=createVector(0,0.1);
   draw();
 }
 function background(a, b, c, d){
