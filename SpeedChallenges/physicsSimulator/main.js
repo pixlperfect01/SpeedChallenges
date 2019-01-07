@@ -18,7 +18,7 @@ function Object(x, y){
 function createVector(x_, y_){
   return new Vector(x_, y_);
 }
-function vector(x, y){
+function Vector(x, y){
   this.x=x;
   this.y=y;
   this.add=function(a, b){
