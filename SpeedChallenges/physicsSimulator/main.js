@@ -17,6 +17,22 @@ function Object(x, y){
     ctx.fill();
   }
 }
+function Water(x, y, w, h){
+  this.pos=createVector(x, y);
+  this.width=w;
+  this.height=h;
+  this.drops=[];
+  for(var i=this.pos.x;i<this.w;i+=5){
+    for(var j=this.pos.y;j<this.h;j+=5){
+      drops.push(new WaterDrop(i, j));
+    }
+  }
+}
+function WaterDrop(x, y){
+  this.pos=createVector(x, y);
+  this.vel=createVector(0, 0);
+  this.acc=createVector(0, 0);
+}
 function createVector(x_, y_){
   return new Vector(x_, y_);
 }
