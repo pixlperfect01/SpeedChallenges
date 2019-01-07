@@ -13,9 +13,9 @@ function Object(x, y){
   }
   this.show=function(){
     ctx.beginPath();
-    ctx.strokeStyle="#FF0000";
+    ctx.fillStyle="#FF0000";
     ctx.arc(this.pos.x, this.pos.y, this.r, 0, 2 * Math.PI);
-    ctx.stroke();
+    ctx.fill();
   }
 }
 function Water(x, y, w, h){
