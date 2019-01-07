@@ -1,9 +1,18 @@
-function player(x, y){
-  this.loc=createVector(x, y);
+function Object(x, y){
+  this.pos=createVector(x, y);
   this.vel=createVector(0, 0);
   this.acc=createVector(0, 0);
-  this.jump=function(){
-    this.vel
+  this.r=10;
+  this.applyForce=function(f){
+    this.acc.add(f);
+  }
+  this.update=function(){
+    this.pos.add(this.vel);
+    this.vel.add(this.acc);
+    this.acc.mult(0);
+  }
+  this.draw=function(){
+    ctx.arc(this.pos.x, this.pos.y, this.r, 0, 2*Math.PI);
   }
 }
 function createVector(x_, y_){
@@ -40,16 +49,20 @@ function vector(x, y){
   }
 }
 setTimeout(setup,500);
-var c,ctx,p;
+var c,ctx,obj,grav;
 function setup(){
   c=document.getElementById("c");
   ctx=c.getContext("2d");
-  p=new Player();
+  obj=new Object(c.width/2, 0);
+  grav=createVector(0,0.2);
   draw();
 }
 
 function draw(){
-  
+  obj.applyForce(grav);
+  obj.update();
+  obj.show();
+  window.requestAnimationFrame(draw);
 }
 
 
