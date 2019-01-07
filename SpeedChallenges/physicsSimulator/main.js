@@ -11,7 +11,7 @@ function Object(x, y){
     this.vel.add(this.acc);
     this.acc.mult(0);
   }
-  this.draw=function(){
+  this.show=function(){
     ctx.arc(this.pos.x, this.pos.y, this.r, 0, 2*Math.PI);
   }
 }
